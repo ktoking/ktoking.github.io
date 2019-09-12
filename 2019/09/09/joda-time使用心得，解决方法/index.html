@@ -1,0 +1,278 @@
+<!DOCTYPE HTML>
+<html>
+
+<head><meta name="generator" content="Hexo 3.9.0">
+	<link rel="bookmark" type="image/x-icon" href="/img/logo_miccall.png">
+	<link rel="shortcut icon" href="/img/logo_miccall.png">
+	
+			    <title>
+    Hexo
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/css/mic_main.css">
+    <link rel="stylesheet" href="/css/dropdownMenu.css">
+    <meta name="keywords" content="miccall">
+    
+    	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css">
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+</head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css">
+<link rel="stylesheet" href="/css/typo.css">
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">STRIKE</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special">
+            <ul class="menu links">
+			<!-- Homepage  主页  --> 
+			<li>
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        
+	                    </li></ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/about/" title="简历">
+		                简历
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/group/" title="团队">
+		                团队
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/gallery/" title="图库">
+		                图库
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+                    
+                    <li>
+                        <a title="github" href="https://github.com/ktoking" target="_blank" rel="noopener">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                    
+			</ul>
+</nav>
+
+        <div id="main">
+            <div class="post_page_title_img" style="height: 25rem;background-image: url(https://6b61-kaige-1259173948.tcb.qcloud.la/kk.jpg?sign=5739abe3d4b40175099309bd657d2ad9&amp;t=1568298039);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;">
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2>joda-time使用心得，解决方法</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <h1 id="joda-time使用心得"><a href="#joda-time使用心得" class="headerlink" title="joda-time使用心得"></a>joda-time使用心得</h1><h2 id="1-如何将JavaDate转换为JodaDateTime："><a href="#1-如何将JavaDate转换为JodaDateTime：" class="headerlink" title="1.如何将JavaDate转换为JodaDateTime："></a>1.如何将JavaDate转换为JodaDateTime：</h2><p>我们在使用<strong>joda-time</strong>的时候难免会跟dataObject类里面的<strong>JavaDate</strong>打交道，但是不转换还是用不了，这里提供了解决方案：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Date date = <span class="keyword">new</span> Date();</span><br><span class="line">DateTime dateTime = <span class="keyword">new</span> DateTime(date);</span><br></pre></td></tr></table></figure>
+
+<p>相反，也可以反过来转换回去</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Date dateNew = dateTime.toDate();</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-总不可能给前端返回去一个joda-time的JSON数据吧"><a href="#2-总不可能给前端返回去一个joda-time的JSON数据吧" class="headerlink" title="2.总不可能给前端返回去一个joda-time的JSON数据吧"></a>2.总不可能给前端返回去一个joda-time的JSON数据吧</h2><p>由于jodatime里面有很多字段是我们前端不需要的，比如前端只需要个年月日时间，你给人家返回去时区等等各种不需要的信息，这里提供了解决方案</p>
+<p><strong>我们在返回前端的VO里面将时间设置为String类型而不是<del>Datetime</del> 类型</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">private</span> String postDate;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> String wantDay;</span><br></pre></td></tr></table></figure>
+
+<p><strong>然后我们使用DateTimeFormat.forPattern方法把Datetime类型转化为我们想要的类型,这里我们设置成这种格式，时间出来就是”2019-09-05 21:01:17”,</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">listsVO.setPostDate(listsModel.getPostDate().toString(DateTimeFormat.forPattern(<span class="string">"yyyy-MM-dd HH:mm:ss"</span>)));</span><br><span class="line"></span><br><span class="line">listsVO.setWantDay(listsModel.getWantDay().toString(DateTimeFormat.forPattern(<span class="string">"yyyy-MM-dd HH:mm:ss"</span>)));</span><br></pre></td></tr></table></figure>
+
+<p>这里返回的<strong>JSON</strong>数据就是这种String类型的了，也便于我们看时间了</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"postDate"</span>: <span class="string">"2019-09-05 21:01:17"</span>,</span><br><span class="line"><span class="string">"wantDay"</span>: <span class="string">"2019-09-07 21:01:25"</span>,</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-Date类型从postman里传入的应该是什么值"><a href="#3-Date类型从postman里传入的应该是什么值" class="headerlink" title="3.Date类型从postman里传入的应该是什么值"></a>3.Date类型从postman里传入的应该是什么值</h2><p><img src="https://img-blog.csdnimg.cn/2019091019304145.png" alt="在这里插入图片描述"><br>一般来说是按照这样的格式传入进去的</p>
+<h2 id="4-joda-time一些特性"><a href="#4-joda-time一些特性" class="headerlink" title="4.joda-time一些特性"></a>4.joda-time一些特性</h2><p><strong>jodatime封装了一些方法便于时间的处理，下图第一行我获得了一个传入值的当天0点时间。<br>在第二行用了isBefore()和isAfter()方法，去比较时间，返回的是一个布尔类型的值，有了这些方法，我们能快速比较时间和获得一些特殊时间~</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>DateTime zeroDate=<span class="keyword">new</span> DateTime(makeDate).withMillisOfDay(<span class="number">0</span>);</span><br><span class="line"><span class="number">2.</span><span class="keyword">if</span>(listsModel.getWantDay().isBefore(<span class="keyword">new</span> DateTime(makeDate))&amp;&amp;listsModel.getWantDay().isAfter(zeroDate))&#123;...&#125;</span><br></pre></td></tr></table></figure>
+
+
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #7EC0EE;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load" id="disqus_bt"> 
+    <button class="disqus_click_btn">点击查看评论</button>
+</div>
+
+<!--
+<script type="text/javascript">
+$('.btn_click_load').click(function() {
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'http-miccall-tech'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    document.getElementById('disqus_bt').style.display = "none";
+});
+</script>
+-->
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://yoursite.com/2019/09/09/joda-time使用心得，解决方法/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://yoursite.com/2019/09/09/joda-time使用心得，解决方法/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/javascript">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//http-miccall-tech.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>
