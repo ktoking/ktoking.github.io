@@ -1,0 +1,292 @@
+<!DOCTYPE HTML>
+<html>
+
+<head><meta name="generator" content="Hexo 3.9.0">
+	<link rel="bookmark" type="image/x-icon" href="/img/logo_miccall.png">
+	<link rel="shortcut icon" href="/img/logo_miccall.png">
+	
+			    <title>
+    Hexo
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/css/mic_main.css">
+    <link rel="stylesheet" href="/css/dropdownMenu.css">
+    <meta name="keywords" content="miccall">
+    
+    	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css">
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+</head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css">
+<link rel="stylesheet" href="/css/typo.css">
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">STRIKE</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special">
+            <ul class="menu links">
+			<!-- Homepage  主页  --> 
+			<li>
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/C/">C</a></li><li><a class="category-link" href="/categories/JAVA/">JAVA</a></li><li><a class="category-link" href="/categories/JavaWeb/">JavaWeb</a></li><li><a class="category-link" href="/categories/MY/">MY</a>
+	                    </li></ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/about/" title="简历">
+		                简历
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/group/" title="团队">
+		                团队
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/gallery/" title="图库">
+		                图库
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+                    
+                    <li>
+                        <a title="github" href="https://github.com/ktoking" target="_blank" rel="noopener">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                    
+			</ul>
+</nav>
+
+        <div id="main">
+            <div class="post_page_title_img" style="height: 25rem;background-image: url(http://img0.imgtn.bdimg.com/it/u=2741207088,1261952730&amp;fm=26&amp;gp=0.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;">
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2>微信小程序拉取微信登录结合springboot与redis</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <h1 id="微信小程序登录"><a href="#微信小程序登录" class="headerlink" title="微信小程序登录"></a>微信小程序登录</h1><p><strong>先来看看流程图</strong><br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9yZXMud3gucXEuY29tL3d4ZG9jL2Rpc3QvYXNzZXRzL2ltZy9hcGktbG9naW4uMmZjYzlmMzUuanBn?x-oss-process=image/format,png" alt="在这里插入图片描述"></p>
+<p><strong>上图就是微信小程序登录的过程,我们只先看上半部分,调用拉取微信自动获取的登陆方法</strong></p>
+<ol>
+<li><p>首先需要在微信开发者工具里的.js的wx.login方法来获取一个存在5分钟的code</p>
+</li>
+<li><p>然后我们把这个code发到后台,用于下一步换取session_key+openid</p>
+</li>
+<li><p>我们在后端服务器中封装一些参数去请求wx换取session_key+openid</p>
+</li>
+<li><p>得到数据存到一个对象里,再存到数据库中,完成登录并获取用户唯一指定openid和session_key</p>
+<h2 id="我们来看一下具体实现"><a href="#我们来看一下具体实现" class="headerlink" title="我们来看一下具体实现"></a>我们来看一下具体实现</h2></li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">wx.login(&#123;</span><br><span class="line">     success: <span class="function"><span class="keyword">function</span>(<span class="params">res</span>)</span>&#123;</span><br><span class="line">       <span class="built_in">console</span>.log(res)</span><br><span class="line">       <span class="comment">//获取临时凭证</span></span><br><span class="line">       <span class="keyword">var</span> code=res.code;</span><br><span class="line">       <span class="comment">//调用后端,获取微信的session_key,secret</span></span><br><span class="line">       wx.request(&#123;</span><br><span class="line">         url: <span class="string">'http://127.0.0.1:8092//api/v1.0/songlists/user/wxLogin?code='</span>+code,</span><br><span class="line">         method: <span class="string">"POST"</span>,</span><br><span class="line">         success: <span class="function"><span class="keyword">function</span>(<span class="params">result</span>)</span>&#123;</span><br><span class="line">           <span class="built_in">console</span>.log(result);</span><br><span class="line">         &#125;</span><br><span class="line">       &#125;)</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;)</span><br><span class="line"> &#125;,</span><br></pre></td></tr></table></figure>
+
+<p>先调用login来获取用户code,在返回的res里面存code,然后我们加到访问请求url中’<a href="http://127.0.0.1:8092//api/v1.0/songlists/user/wxLogin?code=&#39;+code" target="_blank" rel="noopener">http://127.0.0.1:8092//api/v1.0/songlists/user/wxLogin?code=&#39;+code</a><br>其中/api/v1.0/songlists/user/wxLogin这是请求后端地址<br><strong>根目录</strong><br><img src="https://img-blog.csdnimg.cn/20190922215516621.png" alt="在这里插入图片描述"><br><strong>wxLogin方法</strong><br><img src="https://img-blog.csdnimg.cn/20190922215529907.png" alt="在这里插入图片描述"><br>带了一个code参数在url中</p>
+<h2 id="后端-springboot项目"><a href="#后端-springboot项目" class="headerlink" title="后端(springboot项目)"></a>后端(springboot项目)</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@PostMapping</span>(<span class="string">"/wxLogin"</span>)</span><br><span class="line">   <span class="function"><span class="keyword">public</span> CommonReturnType <span class="title">wxLogin</span><span class="params">(String code)</span></span>&#123;</span><br><span class="line">       System.out.println(<span class="string">"wx-code: "</span>+code);</span><br><span class="line">       String url=<span class="string">"https://api.weixin.qq.com/sns/jscode2session"</span>;</span><br><span class="line">       Map&lt;String,String&gt; param=<span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">       param.put(<span class="string">"appid"</span>,<span class="string">"xxxxxxxxx"</span>);</span><br><span class="line">       param.put(<span class="string">"secret"</span>,<span class="string">"xxxxxxxxx"</span>);</span><br><span class="line">       param.put(<span class="string">"js_code"</span>,code);</span><br><span class="line">       param.put(<span class="string">"grant_type"</span>,<span class="string">"authorization_code"</span>);</span><br><span class="line"></span><br><span class="line">       String wxResult=HttpClientUtil.doGet(url,param);</span><br><span class="line">       System.out.println(wxResult);</span><br><span class="line"></span><br><span class="line">       WXSessionModel wxSessionModel= JSON.parseObject(wxResult,WXSessionModel.class);</span><br><span class="line">       redisService.set(<span class="string">"user-redis-session: "</span>+wxSessionModel.getOpenid(),wxSessionModel.getSession_key());</span><br><span class="line">       <span class="comment">//</span></span><br><span class="line">       <span class="keyword">return</span> CommonReturnType.creat(<span class="keyword">null</span>);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>这里是服务端请求微信的url</strong><br><img src="https://img-blog.csdnimg.cn/20190922215817332.png" alt="在这里插入图片描述"><br>但是这里参数并不完全,所以我们用了工具类HttpClientUtil来封装url请求</p>
+<p><strong>这里给出工具类,大家自行copy</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.fehead.songs.utils;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.apache.http.NameValuePair;</span><br><span class="line"><span class="keyword">import</span> org.apache.http.client.entity.UrlEncodedFormEntity;</span><br><span class="line"><span class="keyword">import</span> org.apache.http.client.methods.CloseableHttpResponse;</span><br><span class="line"><span class="keyword">import</span> org.apache.http.client.methods.HttpGet;</span><br><span class="line"><span class="keyword">import</span> org.apache.http.client.methods.HttpPost;</span><br><span class="line"><span class="keyword">import</span> org.apache.http.client.utils.URIBuilder;</span><br><span class="line"><span class="keyword">import</span> org.apache.http.entity.ContentType;</span><br><span class="line"><span class="keyword">import</span> org.apache.http.entity.StringEntity;</span><br><span class="line"><span class="keyword">import</span> org.apache.http.impl.client.CloseableHttpClient;</span><br><span class="line"><span class="keyword">import</span> org.apache.http.impl.client.HttpClients;</span><br><span class="line"><span class="keyword">import</span> org.apache.http.message.BasicNameValuePair;</span><br><span class="line"><span class="keyword">import</span> org.apache.http.util.EntityUtils;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Bean;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Configuration;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.net.URI;</span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HttpClientUtil</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">doGet</span><span class="params">(String url, Map&lt;String, String&gt; param)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 创建Httpclient对象</span></span><br><span class="line">        CloseableHttpClient httpclient = HttpClients.createDefault();</span><br><span class="line"></span><br><span class="line">        String resultString = <span class="string">""</span>;</span><br><span class="line">        CloseableHttpResponse response = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">// 创建uri</span></span><br><span class="line">            URIBuilder builder = <span class="keyword">new</span> URIBuilder(url);</span><br><span class="line">            <span class="keyword">if</span> (param != <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="keyword">for</span> (String key : param.keySet()) &#123;</span><br><span class="line">                    builder.addParameter(key, param.get(key));</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            URI uri = builder.build();</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 创建http GET请求</span></span><br><span class="line">            HttpGet httpGet = <span class="keyword">new</span> HttpGet(uri);</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 执行请求</span></span><br><span class="line">            response = httpclient.execute(httpGet);</span><br><span class="line">            <span class="comment">// 判断返回状态是否为200</span></span><br><span class="line">            <span class="keyword">if</span> (response.getStatusLine().getStatusCode() == <span class="number">200</span>) &#123;</span><br><span class="line">                resultString = EntityUtils.toString(response.getEntity(), <span class="string">"UTF-8"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (response != <span class="keyword">null</span>) &#123;</span><br><span class="line">                    response.close();</span><br><span class="line">                &#125;</span><br><span class="line">                httpclient.close();</span><br><span class="line">            &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> resultString;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">doGet</span><span class="params">(String url)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> doGet(url, <span class="keyword">null</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">doPost</span><span class="params">(String url, Map&lt;String, String&gt; param)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 创建Httpclient对象</span></span><br><span class="line">        CloseableHttpClient httpClient = HttpClients.createDefault();</span><br><span class="line">        CloseableHttpResponse response = <span class="keyword">null</span>;</span><br><span class="line">        String resultString = <span class="string">""</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">// 创建Http Post请求</span></span><br><span class="line">            HttpPost httpPost = <span class="keyword">new</span> HttpPost(url);</span><br><span class="line">            <span class="comment">// 创建参数列表</span></span><br><span class="line">            <span class="keyword">if</span> (param != <span class="keyword">null</span>) &#123;</span><br><span class="line">                List&lt;NameValuePair&gt; paramList = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">                <span class="keyword">for</span> (String key : param.keySet()) &#123;</span><br><span class="line">                    paramList.add(<span class="keyword">new</span> BasicNameValuePair(key, param.get(key)));</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="comment">// 模拟表单</span></span><br><span class="line">                UrlEncodedFormEntity entity = <span class="keyword">new</span> UrlEncodedFormEntity(paramList);</span><br><span class="line">                httpPost.setEntity(entity);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 执行http请求</span></span><br><span class="line">            response = httpClient.execute(httpPost);</span><br><span class="line">            resultString = EntityUtils.toString(response.getEntity(), <span class="string">"utf-8"</span>);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                response.close();</span><br><span class="line">            &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> resultString;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">doPost</span><span class="params">(String url)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> doPost(url, <span class="keyword">null</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">doPostJson</span><span class="params">(String url, String json)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 创建Httpclient对象</span></span><br><span class="line">        CloseableHttpClient httpClient = HttpClients.createDefault();</span><br><span class="line">        CloseableHttpResponse response = <span class="keyword">null</span>;</span><br><span class="line">        String resultString = <span class="string">""</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">// 创建Http Post请求</span></span><br><span class="line">            HttpPost httpPost = <span class="keyword">new</span> HttpPost(url);</span><br><span class="line">            <span class="comment">// 创建请求内容</span></span><br><span class="line">            StringEntity entity = <span class="keyword">new</span> StringEntity(json, ContentType.APPLICATION_JSON);</span><br><span class="line">            httpPost.setEntity(entity);</span><br><span class="line">            <span class="comment">// 执行http请求</span></span><br><span class="line">            response = httpClient.execute(httpPost);</span><br><span class="line">            resultString = EntityUtils.toString(response.getEntity(), <span class="string">"utf-8"</span>);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                response.close();</span><br><span class="line">            &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> resultString;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>接着上面来说,给map里传入四个参数:appid,secret,js_code,grant_type.<br>这里填你自己小程序的信息,appid与secret都能在你的微信公众号开发里面找到</strong><br><img src="https://img-blog.csdnimg.cn/20190922220216174.png" alt="在这里插入图片描述"><br>然后这一步我们调用工具类将参数传进去</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String wxResult=HttpClientUtil.doGet(url,param);</span><br></pre></td></tr></table></figure>
+
+<p>可见返回的是一个string类型的session_key与openid</p>
+<h2 id="存到数据库中-redis"><a href="#存到数据库中-redis" class="headerlink" title="存到数据库中(redis)"></a>存到数据库中(redis)</h2><p>刚得到一个字符串类型的,但是我们需要把他转化为一个对象<br>这时候需要我们用到一个新建一个model类,里面放着session_key与openid,这里省略get/set方法<br><img src="https://img-blog.csdnimg.cn/20190922220727425.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tpbmd0b2s=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>然后,我们把上面的字符串转化为对象,用到了反序列化的<strong>JSON.parseObject方法</strong>,参数前面为将要转化为的字符串,后面跟着转化为哪个类.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">WXSessionModel wxSessionModel= JSON.parseObject(wxResult,WXSessionModel.class);</span><br></pre></td></tr></table></figure>
+
+<p>到了最后一步了,我们需要存到redis数据库中,这里不再讲述如何整合springboot与redis可参照<a href="https://www.jianshu.com/p/19628db2e7ef" target="_blank" rel="noopener">springboot整合redis</a>这篇文章,我们这边直接就用里面的方法</p>
+<hr>
+<p>我们刚存到一个WXSessionModel类中,我们直接调用它取出得到的Openid与Session_key来存到redis中</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redisService.set(<span class="string">"user-redis-session: "</span>+wxSessionModel.getOpenid(),wxSessionModel.getSession_key());</span><br></pre></td></tr></table></figure>
+
+<p><strong>这下我们来看下结果</strong><br><img src="https://img-blog.csdnimg.cn/20190922222810131.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tpbmd0b2s=,size_16,color_FFFFFF,t_70" alt><br><strong>这里在redis里面我们看见了已经存好的openid与session_key</strong>,可以设置过期时间.<br>这里就简单的实现了微信小程序的登录操作</p>
+<h1 id="制作不易-转载请标注"><a href="#制作不易-转载请标注" class="headerlink" title="制作不易,转载请标注~"></a>制作不易,转载请标注~</h1>
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #7EC0EE;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load" id="disqus_bt"> 
+    <button class="disqus_click_btn">点击查看评论</button>
+</div>
+
+<!--
+<script type="text/javascript">
+$('.btn_click_load').click(function() {
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'http-miccall-tech'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    document.getElementById('disqus_bt').style.display = "none";
+});
+</script>
+-->
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://yoursite.com/2019/09/22/微信小程序拉取微信登录结合springboot与redis/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://yoursite.com/2019/09/22/微信小程序拉取微信登录结合springboot与redis/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/javascript">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//http-miccall-tech.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>
