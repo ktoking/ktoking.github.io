@@ -1,0 +1,313 @@
+<!DOCTYPE HTML>
+<html>
+
+<head><meta name="generator" content="Hexo 3.9.0">
+	<link rel="bookmark" type="image/x-icon" href="/img/logo_miccall.png">
+	<link rel="shortcut icon" href="/img/logo_miccall.png">
+	
+			    <title>
+    Hexo
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/css/mic_main.css">
+    <link rel="stylesheet" href="/css/dropdownMenu.css">
+    <meta name="keywords" content="miccall">
+    
+    	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css">
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+</head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css">
+<link rel="stylesheet" href="/css/typo.css">
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">STRIKE</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special">
+            <ul class="menu links">
+			<!-- Homepage  主页  --> 
+			<li>
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/C/">C</a></li><li><a class="category-link" href="/categories/JAVA/">JAVA</a></li><li><a class="category-link" href="/categories/JavaWeb/">JavaWeb</a></li><li><a class="category-link" href="/categories/MY/">MY</a>
+	                    </li></ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/about/" title="简历">
+		                简历
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/group/" title="团队">
+		                团队
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/gallery/" title="图库">
+		                图库
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+                    
+                    <li>
+                        <a title="github" href="https://github.com/ktoking" target="_blank" rel="noopener">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                    
+			</ul>
+</nav>
+
+        <div id="main">
+            <div class="post_page_title_img" style="height: 25rem;background-image: url(https://6b61-kaige-1259173948.tcb.qcloud.la/java/Spring.jpg?sign=ad9bc2b7aa468bb4a46420fc47b5406e&amp;t=1568727333);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;">
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2>SpringBoot与Mybatis的点歌项目（项目）附源码</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <h1 id="点歌后台项目"><a href="#点歌后台项目" class="headerlink" title="点歌后台项目"></a>点歌后台项目</h1><h2 id="一-实现功能"><a href="#一-实现功能" class="headerlink" title="一.实现功能"></a>一.实现功能</h2><p><strong>接口实现的功能</strong></p>
+<ul>
+<li>修改订单状态</li>
+<li>通过userId分页查询user的所有订单(简略信息)</li>
+<li>修改订单信息（如果订单状态不为1则返回：订单状态非进行中）</li>
+<li>删除订单（如果订单状态不为1则返回：订单状态非进行中）</li>
+<li>发布订单信息</li>
+<li>找到所有订单状态为1的信息（简略信息）-&gt;状态1：进行中，2：已完成，3：已删除，4：订单异常(包括已过期),传入进去想要查这个时间之前并且在这一天的且订单状态为1的订单列表（时间按降序排列）</li>
+<li>查询指定userId的状态为status的订单</li>
+<li>通过订单信息查找此订单的所有信息（详细）</li>
+<li>执行定时任务,把在现在时间之前的want_day时间的订单状态置为4已删除</li>
+<li>通过userId查找user信息（详细）</li>
+</ul>
+<h2 id="项目我上传到git上面了-项目git链接"><a href="#项目我上传到git上面了-项目git链接" class="headerlink" title="项目我上传到git上面了:项目git链接"></a>项目我上传到git上面了:<a href="https://github.com/ktoking/songs" target="_blank" rel="noopener">项目git链接</a></h2><h2 id="都有代码解释不懂可以随时call我"><a href="#都有代码解释不懂可以随时call我" class="headerlink" title="都有代码解释不懂可以随时call我"></a>都有代码解释不懂可以随时call我</h2><p><strong>其实都是一些简单的增删改查,没有什么复杂的代码,相信大佬们都可以一眼看懂,这里我挑选几个功能讲解一下,不然代码太少………</strong></p>
+<ul>
+<li>这里用到了一个时间对比操作,用到了joda-time来对比时间,可参照我之前的博客</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 找到所有订单状态为1的信息（简略信息）-&gt;状态1：进行中，2：已完成，3：已删除，4：订单异常(包括已过期)</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> makeDate 传入进去想要查这个时间之前并且在这一天的且订单状态为1的订单列表（时间按降序排列）</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@GetMapping</span>(<span class="string">"status_1"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> CommonReturnType <span class="title">getAllListsStatus_1</span><span class="params">(@RequestParam(<span class="string">"make_date"</span>)</span> Date makeDate)</span>&#123;</span><br><span class="line">        List&lt;ListsModel&gt; listsModelList=listsService.getAllListsStatus_1();</span><br><span class="line">        List&lt;ListsVO&gt; listsVOList=<span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (ListsModel listsModel:listsModelList) &#123;</span><br><span class="line">            DateTime dateTime=<span class="keyword">new</span> DateTime(makeDate);</span><br><span class="line">            DateTime zeroDate=<span class="keyword">new</span> DateTime(makeDate).withMillisOfDay(<span class="number">0</span>);</span><br><span class="line">            ListsVO listsVO=<span class="keyword">new</span> ListsVO();</span><br><span class="line">            <span class="keyword">if</span>(listsModel.getWantDay().isBefore(<span class="keyword">new</span> DateTime(makeDate))&amp;&amp;listsModel.getWantDay().isAfter(zeroDate))&#123;</span><br><span class="line">                BeanUtils.copyProperties(listsModel,listsVO);</span><br><span class="line">                listsVO.setPostDate(listsModel.getPostDate().toString(DateTimeFormat.forPattern(<span class="string">"yyyy-MM-dd HH:mm:ss"</span>)));</span><br><span class="line">                listsVO.setWantDay(listsModel.getWantDay().toString(DateTimeFormat.forPattern(<span class="string">"yyyy-MM-dd HH:mm:ss"</span>)));</span><br><span class="line">                listsVOList.add(listsVO);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> CommonReturnType.creat(listsVOList);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>首先我获取到了订单状态为1(进行中)的所有订单,然后用了foreach循环去依次比较</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//这里把我传进去的时间变为Datetime类型进行比较</span></span><br><span class="line">DateTime dateTime=<span class="keyword">new</span> DateTime(makeDate);</span><br><span class="line"><span class="comment">//这里获取到传进去时间的零点时间</span></span><br><span class="line">DateTime zeroDate=<span class="keyword">new</span> DateTime(makeDate).withMillisOfDay(<span class="number">0</span>);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>传入进去想要查这个时间之前并且在这一天的且订单状态为1的订单列表（时间按降序排列）(有点绕~可以看代码)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(listsModel.getWantDay().isBefore(<span class="keyword">new</span> DateTime(makeDate))&amp;&amp;listsModel.getWantDay().isAfter(zeroDate))</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="过期自动删除"><a href="#过期自动删除" class="headerlink" title="过期自动删除"></a>过期自动删除</h2><p><strong>我在这边写了个定时任务,如果项目一直开启,就回在每天凌晨1点10分执行这个方法</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Scheduled</span>(cron = <span class="string">"0 10 01 * * ?"</span>)<span class="comment">//定时器设定每天凌晨1点10分执行</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> List&lt;SonglistsDO&gt; <span class="title">ScheduledTime</span><span class="params">()</span></span>&#123;</span><br><span class="line">    List&lt;SonglistsDO&gt; songlistsDOList=listsService.selectAllLists();</span><br><span class="line">    <span class="keyword">for</span> (SonglistsDO songlistsDO:songlistsDOList) &#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">new</span> DateTime(songlistsDO.getWantDay()).isBefore(<span class="keyword">new</span> DateTime()))&#123;</span><br><span class="line">            listsService.updateListStatus(songlistsDO.getId(),<span class="number">4</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> songlistsDOList;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这里需要在类上开启 <strong>@EnableScheduling</strong><br><strong>@Scheduled(cron = “0 10 01 * * ?”)</strong> 这里用了corn表达式下面会写一些一般的corn表达式</p>
+<p><strong>这个方法的实现也用到了joda-time的时间比较,如果你的想要发布的时间在现在这个时间点之后(订单过期),就会执行删除操作,也不是真正的删除,把状态改为了4-删除状态</strong></p>
+<h2 id="corn表达式怎么写随便找了点大家可以参考-原理就不一一讲解了"><a href="#corn表达式怎么写随便找了点大家可以参考-原理就不一一讲解了" class="headerlink" title="~~corn表达式怎么写随便找了点大家可以参考,原理就不一一讲解了"></a>~~corn表达式怎么写随便找了点大家可以参考,原理就不一一讲解了</h2><p><strong>常用表达式例子</strong></p>
+<p>　　（1）0 0 2 1 * ? *   表示在每月的1日的凌晨2点调整任务</p>
+<p>　　（2）0 15 10 ? * MON-FRI   表示周一到周五每天上午10:15执行作业</p>
+<p>　　（3）0 15 10 ? 6L 2002-2006   表示2002-2006年的每个月的最后一个星期五上午10:15执行作</p>
+<p>　　（4）0 0 10,14,16 * * ?   每天上午10点，下午2点，4点 </p>
+<p>　　（5）0 0/30 9-17 * * ?   朝九晚五工作时间内每半小时 </p>
+<p>　　（6）0 0 12 ? * WED    表示每个星期三中午12点 </p>
+<p>　　（7）0 0 12 * * ?   每天中午12点触发 </p>
+<p>　　（8）0 15 10 ? * *    每天上午10:15触发 </p>
+<p>　　（9）0 15 10 * * ?     每天上午10:15触发 </p>
+<p>　　（10）0 15 10 * * ? *    每天上午10:15触发 </p>
+<p>　　（11）0 15 10 * * ? 2005    2005年的每天上午10:15触发 </p>
+<p>　　（12）0 * 14 * * ?     在每天下午2点到下午2:59期间的每1分钟触发 </p>
+<p>　　（13）0 0/5 14 * * ?    在每天下午2点到下午2:55期间的每5分钟触发 </p>
+<p>　　（14）0 0/5 14,18 * * ?     在每天下午2点到2:55期间和下午6点到6:55期间的每5分钟触发 </p>
+<p>　　（15）0 0-5 14 * * ?    在每天下午2点到下午2:05期间的每1分钟触发 </p>
+<p>　　（16）0 10,44 14 ? 3 WED    每年三月的星期三的下午2:10和2:44触发 </p>
+<p>　　（17）0 15 10 ? * MON-FRI    周一至周五的上午10:15触发 </p>
+<p>　　（18）0 15 10 15 * ?    每月15日上午10:15触发 </p>
+<p>　　（19）0 15 10 L * ?    每月最后一日的上午10:15触发 </p>
+<p>　　（20）0 15 10 ? * 6L    每月的最后一个星期五上午10:15触发 </p>
+<p>　　（21）0 15 10 ? * 6L 2002-2005   2002年至2005年的每月的最后一个星期五上午10:15触发 </p>
+<p>　　（22）0 15 10 ? * 6#3   每月的第三个星期五上午10:15触发</p>
+<h2 id="整理不易希望大家点个赞"><a href="#整理不易希望大家点个赞" class="headerlink" title="整理不易希望大家点个赞~~"></a>整理不易希望大家点个赞~~</h2>
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #7EC0EE;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load" id="disqus_bt"> 
+    <button class="disqus_click_btn">点击查看评论</button>
+</div>
+
+<!--
+<script type="text/javascript">
+$('.btn_click_load').click(function() {
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'http-miccall-tech'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    document.getElementById('disqus_bt').style.display = "none";
+});
+</script>
+-->
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://yoursite.com/2019/09/27/SpringBoot与Mybatis的点歌项目（项目）附源码/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://yoursite.com/2019/09/27/SpringBoot与Mybatis的点歌项目（项目）附源码/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/javascript">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//http-miccall-tech.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>
